@@ -27,8 +27,22 @@
     <DefineConstants>TRACE</DefineConstants>
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>FIM.AssignManagerToCostCenterActivity.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.IdentityManagement.Logging, Version=4.4.1642.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.IdentityManagement.WebUI.Controls, Version=4.4.1642.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files\Microsoft Forefront Identity Manager\2010\Portal\Microsoft.IdentityManagement.WebUI.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityManagement.WFExtensionInterfaces, Version=4.4.1642.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files\Microsoft Forefront Identity Manager\2010\Portal\Microsoft.IdentityManagement.WFExtensionInterfaces.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ResourceManagement, Version=4.4.1642.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.DirectoryServices" />
@@ -58,17 +72,24 @@
     <Compile Include="AssignManagerToCostCenterActivity.Designer.cs">
       <DependentUpon>AssignManagerToCostCenterActivity.cs</DependentUpon>
     </Compile>
+    <Compile Include="AssignManagerToCostCenterActivitySettingsPart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <None Include="FIM.AssignManagerToCostCenterActivity.snk" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AssignManagerToCostCenterActivity.rules">
+      <DependentUpon>AssignManagerToCostCenterActivity.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.Targets" />
   <Import Project="$(MSBuildToolsPath)\Workflow.Targets" />
