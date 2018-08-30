@@ -404,7 +404,7 @@ namespace FIM.AssignManagerToCostCenterActivity
 
             this.enumManager_ActorId1 = FIMADMGUID;
             this.enumManager_PageSize1 = 100;
-            this.enumManager_XPathFilter1 = "/labCostCenter[LAB-CostCenterManager ='" + _managerSamAccount + "']";
+            this.enumManager_XPathFilter1 = "/Person[LAB-samAccountName ='" + _managerSamAccount + "']";
         }
 
         private void IterateEnumManager_ExecuteCode(object sender, EventArgs e)
